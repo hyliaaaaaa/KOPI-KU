@@ -1,6 +1,0 @@
-1. Buka phpMyAdmin (http://localhost/phpmyadmin)
-2. Buat database dengan nama (db_kopi)
-3. Lalu pilih import dan import file bernama (db_kopi.sql)
-4. Kembali ke aplikasi VSCode, lalu tekan tombol (ctrl + j)
-5. Dan ketikkan perintah (php -S localhost:8000) di Terminal
-6. Kalo sudah buka link "http://localhost:8000"
