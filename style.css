@@ -1,0 +1,634 @@
+/* =============================================
+   1. VARIABEL WARNA TEMA (KOPI / COKLAT HANGAT)
+   Dipakai di seluruh file CSS supaya gampang diganti
+   ============================================= */
+:root {
+    --cream:      #f7efe6;  /* latar krem lembut */
+    --brown:      #6f4e37;  /* coklat kopi utama */
+    --brown-dark: #4a2f20;  /* coklat tua untuk aksen */
+    --caramel:    #c68642;  /* karamel untuk sorotan */
+    --white:      #ffffff;  /* putih */
+    --text:       #3e2a1e;  /* warna teks utama */
+    --shadow:     rgba(74,47,32,.1); /* bayangan hangat */
+}
+
+/* =============================================
+   2. RESET DASAR supaya tampilan rapi di semua browser
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============================================
+   3. GAYA BODY halaman (latar krem + font)
+   ============================================= */
+body {
+    font-family: Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* scrolling halus saat klik tautan */
+}
+
+/* =============================================
+   4. HEADER / BAGIAN ATAS halaman
+   ============================================= */
+header {
+    background: linear-gradient(135deg, var(--brown), var(--brown-dark));
+    color: var(--white);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;           /* menempel di atas saat di-scroll */
+    z-index: 100;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* Judul logo kafe */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+/* =============================================
+   5. KOTAK PENCARIAN menu
+   ============================================= */
+.search-box {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px;
+    width: 280px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Fokus ke kotak pencarian */
+.search-box:focus {
+    box-shadow: 0 0 0 3px rgba(255,255,255,.4);
+}
+
+/* =============================================
+   6. TOMBOL KERANJANG di pojok kanan header
+   ============================================= */
+.cart-btn {
+    background: var(--white);
+    color: var(--brown-dark);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Angka jumlah item di dalam keranjang */
+.cart-count {
+    background: var(--caramel);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 7px;
+    margin-left: 6px;
+}
+
+/* =============================================
+   7. HERO BANNER (gambar besar di bagian atas)
+   ============================================= */
+.hero {
+    position: relative;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Layer gelap di atas gambar biar teks terbaca */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(74,47,32,.55);
+}
+
+/* Isi teks dalam hero */
+.hero-content {
+    position: relative;      /* berada di atas layer gelap */
+    color: var(--white);
+    max-width: 720px;
+    padding: 0 20px;
+}
+
+/* Judul besar hero */
+.hero-content h1 {
+    font-size: 46px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+/* Kata "Kopi-Ku" dalam judul diberi warna karamel */
+.hero-content h1 span {
+    color: #ffc37a;
+}
+
+/* Slogan di bawah judul */
+.hero-content p {
+    font-size: 18px;
+    opacity: .95;
+    margin-bottom: 24px;
+}
+
+/* Tombol di dalam hero */
+.hero-btn {
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: #d99b52;
+}
+
+/* =============================================
+   8. BAGIAN FITUR (3 kotak kepercayaan)
+   ============================================= */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Satu kotak fitur */
+.feature {
+    background: var(--white);
+    text-align: center;
+    padding: 26px 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--shadow);
+    border-top: 4px solid var(--caramel);
+}
+
+/* Ikon fitur (bulatan warna) */
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--caramel);
+    font-size: 24px;
+}
+
+/* Judul singkat fitur */
+.feature h3 {
+    color: var(--brown-dark);
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+/* Teks penjelasan fitur */
+.feature p {
+    font-size: 13px;
+    color: #8a847d;
+}
+
+/* =============================================
+   9. BAGIAN MENU (daftar produk)
+   ============================================= */
+.menu-section {
+    max-width: 1100px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+}
+
+/* Judul besar halaman */
+.page-title {
+    color: var(--brown-dark);
+    margin-bottom: 20px;
+}
+
+/* =============================================
+   10. TOMBOL UMUM (dipakai tombol Tambah, Simpan, dll)
+   ============================================= */
+.btn {
+    display: inline-block;
+    background: var(--brown);
+    color: var(--white);
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* Efek saat tombol disentuh */
+.btn:hover {
+    background: var(--caramel);
+}
+
+/* Tombol khusus tambah menu (hijau lembut) */
+.btn-add {
+    background: #7bd88f;
+    margin-bottom: 20px;
+}
+
+/* Tombol khusus edit (biru lembut) */
+.btn-edit {
+    background: #5aa9f7;
+}
+
+/* Tombol khusus hapus (merah) */
+.btn-delete {
+    background: #f47676;
+}
+
+/* =============================================
+   11. BARIS FILTER KATEGORI (Minuman / Makanan / Semua)
+   ============================================= */
+.filter-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--white);
+    border: 2px solid var(--brown);
+    color: var(--brown);
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: .2s;
+}
+
+/* Kategori yang sedang aktif */
+.filter-btn.active {
+    background: var(--brown);
+    color: var(--white);
+}
+
+/* =============================================
+   12. GRID KARTU MENU (tata letak katalog)
+   ============================================= */
+.product-grid {
+    display: grid;
+    /* 4 kolom otomatis, menyesuaikan layar */
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+/* =============================================
+   13. KARTU MENU satuan
+   ============================================= */
+.card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: .2s;
+}
+
+/* Efek angkat saat kartu disorot */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px var(--shadow);
+}
+
+/* Wadah gambar supaya badge bisa menumpuk di atas gambar */
+.card-image {
+    position: relative;
+}
+
+/* Gambar menu dalam kartu */
+.card-image img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;   /* gambar tidak melar, dipotong rapi */
+}
+
+/* Badge kategori menempel di pojok kiri bawah gambar */
+.category {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: var(--brown-dark);
+    color: #ffc37a;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 14px;
+    opacity: .95;
+}
+
+/* Area isi teks dalam kartu */
+.card-body {
+    padding: 14px;
+}
+
+/* Nama menu */
+.card-body h3 {
+    font-size: 16px;
+    color: var(--brown-dark);
+    margin-bottom: 6px;
+}
+
+/* Deskripsi singkat */
+.card-body p {
+    font-size: 13px;
+    color: #8a847d;
+    min-height: 40px;
+}
+
+/* Harga menu */
+.price {
+    color: var(--caramel);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* Badge stok (tersedia / habis) */
+.stock {
+    font-size: 12px;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    background: #e7f8ec;
+    color: #2f9e4f;
+    margin-bottom: 10px;
+}
+
+.stock.out {
+    background: #ffecec;
+    color: #d63a3a;
+}
+
+/* Tombol beli + aksi admin di dalam kartu */
+.card-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.card-actions .btn {
+    padding: 7px 12px;
+    font-size: 13px;
+    flex: 1;
+    text-align: center;
+}
+
+/* =============================================
+   14. FOOTER (bagian penutup)
+   ============================================= */
+footer {
+    background: var(--brown-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 36px 20px;
+    margin-top: 40px;
+}
+
+/* Nama toko di footer */
+.footer-brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffc37a;
+    margin-bottom: 8px;
+}
+
+/* Teks info di footer */
+footer p {
+    font-size: 14px;
+    opacity: .9;
+    margin-bottom: 14px;
+}
+
+/* Tautan kembali ke atas */
+.back-top {
+    color: #ffc37a;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-top:hover {
+    text-decoration: underline;
+}
+
+/* =============================================
+   15. LACI KERANJANG (muncul dari kanan)
+   ============================================= */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -380px;   /* sementara disembunyikan di luar layar */
+    width: 360px;
+    height: 100%;
+    background: var(--white);
+    box-shadow: -4px 0 20px var(--shadow);
+    transition: .3s;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Class aktif → laci tergeser masuk ke layar */
+.cart-drawer.active {
+    right: 0;
+}
+
+/* Judul laci keranjang */
+.cart-header {
+    background: var(--brown);
+    color: var(--white);
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tombol silang untuk menutup laci */
+.close-cart {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* Daftar item dalam keranjang */
+.cart-items {
+    flex: 1;
+    overflow-y: auto;   /* bisa digulir kalau panjang */
+    padding: 14px;
+}
+
+/* Satu baris item */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+/* Tombol hapus satu item */
+.cart-item .remove {
+    background: #f4e3d3;
+    border: none;
+    color: var(--brown-dark);
+    border-radius: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+/* Bagian bawah laci: total + checkout */
+.cart-footer {
+    border-top: 2px solid var(--cream);
+    padding: 16px;
+}
+
+/* Teks total harga */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: var(--brown-dark);
+    margin-bottom: 12px;
+}
+
+/* Tombol bayar */
+.checkout-btn {
+    width: 100%;
+    padding: 12px;
+}
+
+/* =============================================
+   16. LAYER GELAP saat keranjang terbuka
+   ============================================= */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(74,47,32,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 150;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =============================================
+   17. KOTAK PEMBERITAHUAN (toast) muncul di bawah
+   ============================================= */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--brown-dark);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 300;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* =============================================
+   18. FORMULIR (dipakai tambah & edit menu)
+   ============================================= */
+.form-box {
+    background: var(--white);
+    max-width: 520px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Label setiap input */
+.form-box label {
+    display: block;
+    margin-top: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--brown-dark);
+}
+
+/* Semua input, textarea dan select */
+.form-box input,
+.form-box textarea,
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #e0c9af;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+/* Fokus ke input */
+.form-box input:focus,
+.form-box textarea:focus,
+.form-box select:focus {
+    outline: none;
+    border-color: var(--caramel);
+    box-shadow: 0 0 0 3px #f4e3d3;
+}
+
+/* Tombol submit dalam form */
+.form-box .btn {
+    margin-top: 20px;
+}
+
+/* =============================================
+   19. TAMPILAN LAYAR KECIL (ponsel)
+   ============================================= */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .cart-drawer {
+        width: 100%;
+        right: -100%;
+    }
+
+    /* Hero mengecil di HP */
+    .hero {
+        height: 320px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
